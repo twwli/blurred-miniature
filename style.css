@@ -1,0 +1,95 @@
+* { 
+    box-sizing: border-box; 
+    margin: 0;
+    padding: 0;
+  }
+  
+  body { 
+    font-family: sans-serif; 
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  h3 {
+   font-weight: normal; 
+  }
+  
+  img {
+    display:block;
+    max-width: 100%;
+  }
+  
+  .grid li {
+    list-style: none;
+    width: 25vw;
+    min-width: 350px;
+    margin: 4vw auto;
+  }
+  
+  .grid li a {
+    display: block;
+    position: relative;
+  }
+
+  .grid li figure {
+    opacity: 0;
+  }
+  
+  .caption,
+  .curtain {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .caption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, .8);
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1) .15s;
+    z-index: 1;
+  }
+  
+  .grid li a:hover .caption {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .curtain {
+    overflow: hidden;
+    background: #eee;
+    z-index: -1;
+  }
+
+  .curtain img {
+    width: 100%;
+    filter: blur(3rem);
+  }
+
+  /* Animation fade-in */
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Classe fade-in avec un délai */
+  .fade-in {
+    animation: fadeIn 1s ease forwards;
+    opacity: 0; /* L'élément commence invisible */
+  }
+  
+  
+  
